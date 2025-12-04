@@ -1,0 +1,135 @@
+.contact-page {
+  padding-top: 80px;
+}
+
+.contact-hero {
+  background: linear-gradient(135deg, #8B5A3C 0%, #D4A574 100%);
+  color: var(--color-bg-light);
+  text-align: center;
+  padding: var(--spacing-xxl) 0;
+}
+
+.contact-content {
+  background: var(--color-bg);
+  padding: var(--spacing-xxl) 0;
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  background: var(--color-bg-light);
+  padding: var(--spacing-xl);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.contact-info h2 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text);
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.contact-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text);
+}
+
+.contact-item p {
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-sm);
+}
+
+.contact-item a {
+  color: var(--color-primary);
+  transition: var(--transition-base);
+}
+
+.contact-item a:hover {
+  color: var(--color-accent);
+}
+
+.contact-social {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.contact-social a {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: var(--transition-base);
+}
+
+.contact-social a:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-bg-light);
+}
+
+.contact-form-wrapper {
+  background: var(--color-bg-light);
+  padding: var(--spacing-xl);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-btn {
+  margin-top: var(--spacing-md);
+  width: 100%;
+}
+
+.contact-success {
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.contact-success .success-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto var(--spacing-lg);
+}
+
+.contact-success h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.contact-success p {
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-lg);
+}
+
+@media (max-width: 968px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,67 @@
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  padding: var(--spacing-lg);
+}
+
+.admin-login-container {
+  width: 100%;
+  max-width: 450px;
+}
+
+.admin-login-card {
+  background: var(--color-bg-light);
+  padding: var(--spacing-xl);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+}
+
+.admin-login-card h1 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-xs);
+  text-align: center;
+  color: var(--color-text);
+}
+
+.admin-login-subtitle {
+  text-align: center;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-xl);
+}
+
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.admin-error {
+  padding: var(--spacing-sm);
+  background: #fee;
+  color: #c33;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.admin-login-button {
+  width: 100%;
+  margin-top: var(--spacing-sm);
+}
+
+.admin-login-note {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: var(--color-bg);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+.admin-login-note p {
+  margin: var(--spacing-xs) 0;
+}

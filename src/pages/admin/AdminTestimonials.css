@@ -1,0 +1,85 @@
+.admin-testimonials {
+  padding: var(--spacing-xl);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.testimonial-card {
+  background: var(--color-bg-light);
+  padding: var(--spacing-lg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.testimonial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+}
+
+.testimonial-header h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text);
+}
+
+.testimonial-rating {
+  color: var(--color-accent);
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+}
+
+.badge.highlight {
+  background: var(--color-primary);
+  color: var(--color-bg-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.testimonial-review {
+  color: var(--color-text-light);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+  font-style: italic;
+}
+
+.testimonial-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.testimonial-actions .btn-edit,
+.testimonial-actions .btn-delete {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: var(--transition-base);
+}
+
+.testimonial-actions .btn-edit {
+  background: var(--color-primary);
+  color: var(--color-bg-light);
+}
+
+.testimonial-actions .btn-edit:hover {
+  background: var(--color-accent);
+}
+
+.testimonial-actions .btn-delete {
+  background: #dc3545;
+  color: white;
+}
+
+.testimonial-actions .btn-delete:hover {
+  background: #c82333;
+}

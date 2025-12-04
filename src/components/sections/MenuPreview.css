@@ -1,0 +1,111 @@
+.menu-preview {
+  background: var(--color-bg);
+  padding: var(--spacing-xxl) 0;
+}
+
+.menu-preview-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.menu-preview-card {
+  background: var(--color-bg-light);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: var(--transition-base);
+  cursor: pointer;
+}
+
+.menu-preview-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.menu-preview-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.menu-preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+}
+
+.menu-preview-card:hover .menu-preview-image img {
+  transform: scale(1.1);
+}
+
+.menu-preview-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--spacing-md);
+  opacity: 0;
+  transition: var(--transition-base);
+}
+
+.menu-preview-card:hover .menu-preview-overlay {
+  opacity: 1;
+}
+
+.menu-preview-overlay h3 {
+  color: var(--color-bg-light);
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.menu-preview-content {
+  padding: var(--spacing-md);
+}
+
+.menu-preview-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.menu-preview-items li {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  padding-left: var(--spacing-sm);
+  position: relative;
+}
+
+.menu-preview-items li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.menu-preview-cta {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+  .menu-preview-grid {
+    grid-template-columns: 1fr;
+  }
+}

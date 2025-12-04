@@ -1,0 +1,90 @@
+.admin-reservations {
+  padding: var(--spacing-xl);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.filter-buttons button {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.filter-buttons button:hover {
+  background: var(--color-bg);
+}
+
+.filter-buttons button.active {
+  background: var(--color-primary);
+  color: var(--color-bg-light);
+  border-color: var(--color-primary);
+}
+
+.reservations-table {
+  background: var(--color-bg-light);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-top: var(--spacing-lg);
+}
+
+.reservations-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.reservations-table thead {
+  background: var(--color-bg);
+}
+
+.reservations-table th {
+  padding: var(--spacing-md);
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.reservations-table td {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.status-select {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.status-select.status-pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-select.status-confirmed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-select.status-completed {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.status-select.status-cancelled {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.special-requests {
+  cursor: help;
+  font-size: 1.25rem;
+}

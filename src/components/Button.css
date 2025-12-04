@@ -1,0 +1,97 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: var(--transition-base);
+  z-index: 1;
+}
+
+.btn-text {
+  position: relative;
+  z-index: 2;
+  transition: var(--transition-base);
+}
+
+.btn-bg {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--color-primary);
+  transition: var(--transition-base);
+  z-index: 1;
+}
+
+.btn:hover .btn-bg {
+  left: 0;
+}
+
+/* Primary Variant */
+.btn-primary {
+  background: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-text);
+}
+
+.btn-primary:hover .btn-text {
+  color: var(--color-bg-light);
+}
+
+/* Accent Variant */
+.btn-accent {
+  background: var(--color-primary);
+  color: var(--color-bg-light);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-accent .btn-bg {
+  background: var(--color-accent);
+}
+
+.btn-accent:hover .btn-text {
+  color: var(--color-bg-light);
+}
+
+/* Ghost Variant */
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text);
+  border: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-ghost .btn-bg {
+  background: var(--color-bg);
+}
+
+.btn-ghost:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Sizes */
+.btn-small {
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: 0.85rem;
+}
+
+.btn-medium {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: 0.95rem;
+}
+
+.btn-large {
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: 1.1rem;
+}
