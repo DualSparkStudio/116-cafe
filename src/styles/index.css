@@ -5,15 +5,15 @@
 }
 
 :root {
-  /* Colors - Modern blue/teal theme */
-  --color-primary: #2563EB;
-  --color-accent: #06B6D4;
-  --color-text: #111111;
-  --color-text-light: #666666;
-  --color-bg: #F8FAFC;
+  /* Colors - Professional light theme */
+  --color-primary: #475569;
+  --color-accent: #0EA5E9;
+  --color-text: #1E293B;
+  --color-text-light: #64748B;
+  --color-bg: #FAFBFC;
   --color-bg-light: #FFFFFF;
   --color-border: #E2E8F0;
-  --color-overlay: rgba(0, 0, 0, 0.4);
+  --color-overlay: rgba(0, 0, 0, 0.3);
   
   /* Typography */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -137,6 +137,19 @@ button {
 
 .section {
   padding: var(--spacing-xl) 0;
+}
+
+.page-heading {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+}
+
+.page-subheading {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: var(--color-text-light);
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {

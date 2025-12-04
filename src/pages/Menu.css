@@ -3,8 +3,8 @@
 }
 
 .menu-hero {
-  background: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%);
-  color: var(--color-bg-light);
+  background: linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%);
+  color: var(--color-text);
   text-align: center;
   padding: var(--spacing-xxl) 0;
 }
@@ -12,12 +12,12 @@
 .page-heading {
   font-size: clamp(2.5rem, 5vw, 4rem);
   margin-bottom: var(--spacing-md);
-  color: var(--color-bg-light);
+  color: var(--color-text);
 }
 
 .page-subheading {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-text-light);
   max-width: 700px;
   margin: 0 auto;
 }

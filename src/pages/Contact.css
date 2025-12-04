@@ -3,8 +3,8 @@
 }
 
 .contact-hero {
-  background: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%);
-  color: var(--color-bg-light);
+  background: linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%);
+  color: var(--color-text);
   text-align: center;
   padding: var(--spacing-xxl) 0;
 }
