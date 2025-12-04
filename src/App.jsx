@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useEffect } from 'react'
-import Lenis from '@studio-freight/lenis'
+import Lenis from 'lenis'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -38,6 +40,9 @@ function App() {
       offset: 100
     })
 
+    // Register GSAP ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger)
+
     // Initialize Lenis smooth scroll
     const lenis = new Lenis({
       duration: 1.2,
@@ -48,8 +53,15 @@ function App() {
       wheelMultiplier: 1,
       smoothTouch: false,
       touchMultiplier: 2,
+      infinite: false,
     })
 
+    // Integrate Lenis with GSAP ScrollTrigger
+    lenis.on('scroll', (e) => {
+      ScrollTrigger.update()
+    })
+
+    // RAF loop for smooth scrolling
     function raf(time) {
       lenis.raf(time)
       requestAnimationFrame(raf)
@@ -57,8 +69,14 @@ function App() {
 
     requestAnimationFrame(raf)
 
+    // Refresh ScrollTrigger after a short delay to ensure everything is loaded
+    setTimeout(() => {
+      ScrollTrigger.refresh()
+    }, 100)
+
     return () => {
       lenis.destroy()
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
     }
   }, [])
 

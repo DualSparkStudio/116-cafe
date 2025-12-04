@@ -35,28 +35,28 @@ const AdminDashboard = () => {
       value: stats.totalMenuItems,
       icon: '☕',
       link: '/admin/menu',
-      color: '#8B5A3C'
+      color: '#2563EB'
     },
     {
       title: "Today's Reservations",
       value: stats.todayReservations,
       icon: '📅',
       link: '/admin/reservations',
-      color: '#D4A574'
+      color: '#06B6D4'
     },
     {
       title: 'Pending Reservations',
       value: stats.pendingReservations,
       icon: '⏳',
       link: '/admin/reservations',
-      color: '#8B5A3C'
+      color: '#2563EB'
     },
     {
       title: 'Total Reservations',
       value: stats.totalReservations,
       icon: '📋',
       link: '/admin/reservations',
-      color: '#D4A574'
+      color: '#06B6D4'
     }
   ]
 
