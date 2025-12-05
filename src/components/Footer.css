@@ -133,6 +133,29 @@
   text-align: center;
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-credit {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-credit a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.footer-credit a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {

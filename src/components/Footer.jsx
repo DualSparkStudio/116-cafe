@@ -95,6 +95,17 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} Premium Cafe. All rights reserved.</p>
+          <p className="footer-credit">
+            Designed by{' '}
+            <a
+              href="https://dualsparkstudio.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="hover"
+            >
+              DualSpark Studio
+            </a>
+          </p>
         </div>
       </div>
     </footer>
