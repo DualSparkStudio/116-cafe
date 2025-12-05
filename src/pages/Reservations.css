@@ -15,11 +15,11 @@
 }
 
 .reservations-form-wrapper {
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
   background: var(--color-bg-light);
-  padding: var(--spacing-xl);
-  border-radius: 12px;
+  padding: var(--spacing-lg);
+  border-radius: 8px;
   box-shadow: var(--shadow-md);
 }
 
@@ -46,30 +46,30 @@
 
 .reservation-success {
   text-align: center;
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
-  padding: var(--spacing-xxl);
+  padding: var(--spacing-xl);
   background: var(--color-bg-light);
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: var(--shadow-lg);
 }
 
 .success-icon {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background: var(--color-primary);
   color: var(--color-bg-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
-  margin: 0 auto var(--spacing-lg);
+  font-size: 2rem;
+  margin: 0 auto var(--spacing-md);
 }
 
 .reservation-success h2 {
-  font-size: 2rem;
-  margin-bottom: var(--spacing-md);
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
   color: var(--color-text);
 }
 
