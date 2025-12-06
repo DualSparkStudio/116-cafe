@@ -15,6 +15,8 @@ import SmoothScroll from './components/SmoothScroll'
 // Public Pages
 import Home from './pages/Home'
 import Menu from './pages/Menu'
+import MenuItemDetail from './pages/MenuItemDetail'
+import Cart from './pages/Cart'
 import Reservations from './pages/Reservations'
 import Contact from './pages/Contact'
 import About from './pages/About'
@@ -98,6 +100,20 @@ function App() {
               <>
                 <Navbar />
                 <Menu />
+                <Footer />
+              </>
+            } />
+            <Route path="/menu/:id" element={
+              <>
+                <Navbar />
+                <MenuItemDetail />
+                <Footer />
+              </>
+            } />
+            <Route path="/cart" element={
+              <>
+                <Navbar />
+                <Cart />
                 <Footer />
               </>
             } />

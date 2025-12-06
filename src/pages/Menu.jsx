@@ -1,14 +1,18 @@
 import { useState, useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useStore } from '../store/store'
 import Card from '../components/Card'
 import Input from '../components/Input'
+import Button from '../components/Button'
 import './Menu.css'
 
 const Menu = () => {
+  const navigate = useNavigate()
   const [activeCategory, setActiveCategory] = useState('all')
   const [searchQuery, setSearchQuery] = useState('')
-  const { menuItems } = useStore()
+  const { menuItems, addToCart } = useStore()
+  const [addedItems, setAddedItems] = useState({})
 
   // Mock menu data
   const categories = ['all', 'Coffee', 'Drinks', 'Breakfast', 'Sandwiches', 'Pasta', 'Desserts', 'Specials']
@@ -43,6 +47,19 @@ const Menu = () => {
       return matchesCategory && matchesSearch
     })
   }, [items, activeCategory, searchQuery])
+
+  const handleCardClick = (itemId) => {
+    navigate(`/menu/${itemId}`)
+  }
+
+  const handleAddToCart = (e, item) => {
+    e.stopPropagation()
+    addToCart(item, 1)
+    setAddedItems(prev => ({ ...prev, [item.id]: true }))
+    setTimeout(() => {
+      setAddedItems(prev => ({ ...prev, [item.id]: false }))
+    }, 2000)
+  }
 
   return (
     <div className="menu-page">
@@ -92,7 +109,13 @@ const Menu = () => {
             >
               {filteredItems.length > 0 ? (
                 filteredItems.map((item) => (
-                  <Card key={item.id} className="menu-item-card" hover>
+                  <Card 
+                    key={item.id} 
+                    className="menu-item-card" 
+                    hover
+                    onClick={() => handleCardClick(item.id)}
+                    style={{ cursor: 'pointer' }}
+                  >
                     {item.image && (
                       <div className="menu-item-image">
                         <img src={item.image} alt={item.name} loading="lazy" />
@@ -112,6 +135,17 @@ const Menu = () => {
                           ))}
                         </div>
                         <span className="menu-item-price">₹{(item.price * 83).toFixed(2)}</span>
+                      </div>
+                      <div className="menu-item-actions">
+                        <Button
+                          variant="accent"
+                          size="small"
+                          onClick={(e) => handleAddToCart(e, item)}
+                          className="menu-add-to-cart-btn"
+                          data-cursor="hover"
+                        >
+                          {addedItems[item.id] ? '✓ Added!' : 'Add to Cart'}
+                        </Button>
                       </div>
                     </div>
                   </Card>
