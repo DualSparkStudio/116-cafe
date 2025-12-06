@@ -10,11 +10,22 @@
 }
 
 .navbar.scrolled {
-  background: rgba(250, 248, 245, 0.85);
+  background: rgba(250, 248, 245, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: var(--spacing-sm) 0;
   box-shadow: var(--shadow-sm);
+}
+
+/* Make navbar text white when over hero section */
+.navbar:not(.scrolled) .navbar-logo,
+.navbar:not(.scrolled) .navbar-links a {
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar:not(.scrolled) .navbar-toggle span {
+  background: #ffffff;
 }
 
 .navbar-container {
@@ -35,7 +46,11 @@
   transition: var(--transition-base);
 }
 
-.navbar-logo:hover {
+.navbar:not(.scrolled) .navbar-logo:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar.scrolled .navbar-logo:hover {
   color: var(--color-primary);
 }
 
@@ -72,8 +87,13 @@
   width: 100%;
 }
 
-.navbar-links a:hover,
-.navbar-links a.active {
+.navbar:not(.scrolled) .navbar-links a:hover,
+.navbar:not(.scrolled) .navbar-links a.active {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar.scrolled .navbar-links a:hover,
+.navbar.scrolled .navbar-links a.active {
   color: var(--color-primary);
 }
 

@@ -1,9 +1,12 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Link } from 'react-router-dom'
 import { useStore } from '../../store/store'
 import Button from '../Button'
 import './Hero.css'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Hero = () => {
   const heroRef = useRef(null)
@@ -13,64 +16,70 @@ const Hero = () => {
   const { siteContent } = useStore()
 
   useEffect(() => {
+    // Ensure content is visible before animation
+    if (headingRef.current) {
+      gsap.set(headingRef.current, { opacity: 1, visibility: 'visible' })
+    }
+    if (subheadingRef.current) {
+      gsap.set(subheadingRef.current, { opacity: 1, visibility: 'visible' })
+    }
+    if (buttonsRef.current) {
+      gsap.set(buttonsRef.current, { opacity: 1, visibility: 'visible' })
+    }
+
     const ctx = gsap.context(() => {
       // Text reveal animation
-      gsap.fromTo(
-        headingRef.current,
-        {
-          y: 100,
-          opacity: 0
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1.2,
-          ease: 'power3.out',
-          delay: 0.3
-        }
-      )
+      if (headingRef.current) {
+        gsap.fromTo(
+          headingRef.current,
+          {
+            y: 100,
+            opacity: 1
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1.2,
+            ease: 'power3.out',
+            delay: 0.3
+          }
+        )
+      }
 
-      gsap.fromTo(
-        subheadingRef.current,
-        {
-          y: 50,
-          opacity: 0
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: 'power3.out',
-          delay: 0.8
-        }
-      )
+      if (subheadingRef.current) {
+        gsap.fromTo(
+          subheadingRef.current,
+          {
+            y: 50,
+            opacity: 1
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: 'power3.out',
+            delay: 0.8
+          }
+        )
+      }
 
-      gsap.fromTo(
-        buttonsRef.current,
-        {
-          y: 30,
-          opacity: 0
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: 'power2.out',
-          delay: 1.2
-        }
-      )
+      if (buttonsRef.current) {
+        gsap.fromTo(
+          buttonsRef.current,
+          {
+            y: 30,
+            opacity: 1
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: 'power2.out',
+            delay: 1.2
+          }
+        )
+      }
 
-      // Parallax effect on scroll
-      gsap.to(heroRef.current, {
-        yPercent: -50,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true
-        }
-      })
     }, heroRef)
 
     return () => ctx.revert()
@@ -79,8 +88,7 @@ const Hero = () => {
   return (
     <section ref={heroRef} className="hero">
       <div className="hero-background">
-        <div className="hero-overlay"></div>
-        <div className="hero-gradient"></div>
+        <div className="hero-image"></div>
       </div>
       <div className="hero-content">
         <div className="container">
@@ -91,11 +99,11 @@ const Hero = () => {
             {siteContent.heroSubheading}
           </p>
           <div ref={buttonsRef} className="hero-buttons">
-            <Link to="/menu">
-              <Button variant="accent" size="large">View Menu</Button>
+            <Link to="/menu" className="hero-btn-link">
+              <Button variant="accent" size="large" className="hero-btn">View Menu</Button>
             </Link>
-            <Link to="/reservations">
-              <Button variant="primary" size="large">Reserve a Table</Button>
+            <Link to="/reservations" className="hero-btn-link">
+              <Button variant="primary" size="large" className="hero-btn hero-btn-outline">Reserve a Table</Button>
             </Link>
           </div>
         </div>
