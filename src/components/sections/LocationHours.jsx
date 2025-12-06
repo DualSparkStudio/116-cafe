@@ -61,10 +61,16 @@ const LocationHours = () => {
             </ul>
           </div>
           <div className="location-map">
-            <div className="map-placeholder">
-              <p>Map will be embedded here</p>
-              <p className="map-note">Connect to Google Maps API to display interactive map</p>
-            </div>
+            <iframe
+              src={`https://www.google.com/maps?q=${encodeURIComponent(siteContent.address)}&output=embed`}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Cafe Location Map"
+            ></iframe>
           </div>
         </div>
       </div>
