@@ -134,7 +134,7 @@ const AdminMenu = () => {
                     {item.bestseller && <span className="badge bestseller">Bestseller</span>}
                   </td>
                   <td>{item.category}</td>
-                  <td>${item.price.toFixed(2)}</td>
+                  <td>₹{(item.price * 83).toFixed(2)}</td>
                   <td>{item.tags.join(', ')}</td>
                   <td>
                     <span className={`status ${item.available ? 'available' : 'unavailable'}`}>

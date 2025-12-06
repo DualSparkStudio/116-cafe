@@ -111,7 +111,7 @@ const Menu = () => {
                             <span key={tag} className="menu-tag">{tag}</span>
                           ))}
                         </div>
-                        <span className="menu-item-price">${item.price.toFixed(2)}</span>
+                        <span className="menu-item-price">₹{(item.price * 83).toFixed(2)}</span>
                       </div>
                     </div>
                   </Card>

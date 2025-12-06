@@ -17,7 +17,7 @@ const Signature = () => {
       id: 1,
       name: 'Artisan Espresso',
       description: 'Our signature blend, roasted to perfection',
-      price: '$4.50',
+      price: '₹373.50',
       tags: ['Hot', 'Bestseller'],
       image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=400&h=400&fit=crop'
     },
@@ -25,7 +25,7 @@ const Signature = () => {
       id: 2,
       name: 'Craft Latte',
       description: 'Smooth espresso with velvety steamed milk',
-      price: '$5.50',
+      price: '₹456.50',
       tags: ['Hot', 'Bestseller'],
       image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop'
     },
@@ -33,7 +33,7 @@ const Signature = () => {
       id: 3,
       name: 'Cold Brew Delight',
       description: 'Slow-steeped for 24 hours, smooth and refreshing',
-      price: '$5.00',
+      price: '₹415.00',
       tags: ['Cold', 'Bestseller'],
       image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=400&h=400&fit=crop'
     },
@@ -41,7 +41,7 @@ const Signature = () => {
       id: 4,
       name: 'Avocado Toast',
       description: 'Fresh avocado on artisan sourdough',
-      price: '$8.50',
+      price: '₹705.50',
       tags: ['Vegan', 'Bestseller'],
       image: 'https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=400&h=400&fit=crop'
     },
@@ -49,7 +49,7 @@ const Signature = () => {
       id: 5,
       name: 'Chocolate Croissant',
       description: 'Buttery, flaky pastry with rich chocolate',
-      price: '$4.00',
+      price: '₹332.00',
       tags: ['Bestseller'],
       image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=400&fit=crop'
     },
@@ -57,7 +57,7 @@ const Signature = () => {
       id: 6,
       name: 'Matcha Latte',
       description: 'Premium matcha with steamed oat milk',
-      price: '$6.00',
+      price: '₹498.00',
       tags: ['Hot', 'Vegan'],
       image: 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=400&h=400&fit=crop'
     }
