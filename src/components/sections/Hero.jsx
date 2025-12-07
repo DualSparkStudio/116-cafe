@@ -28,54 +28,126 @@ const Hero = () => {
     }
 
     const ctx = gsap.context(() => {
-      // Text reveal animation
+      // Enhanced heading animation with letter-by-letter reveal
       if (headingRef.current) {
+        const text = headingRef.current.textContent
+        const words = text.split(' ')
+        headingRef.current.innerHTML = words
+          .map(word => 
+            word.split('')
+              .map(char => `<span class="char" style="display: inline-block; opacity: 0; transform: translateY(20px) rotateX(90deg);">${char}</span>`)
+              .join('')
+          )
+          .join('<span class="char" style="display: inline-block; width: 0.3em;"></span>')
+        
+        const chars = headingRef.current.querySelectorAll('.char')
+        
+        // Initial container animation
         gsap.fromTo(
           headingRef.current,
           {
-            y: 100,
-            opacity: 1
+            y: 120,
+            opacity: 0,
+            scale: 0.8
           },
           {
             y: 0,
             opacity: 1,
-            duration: 1.2,
-            ease: 'power3.out',
-            delay: 0.3
+            scale: 1,
+            duration: 1.5,
+            ease: 'power4.out',
+            delay: 0.2
           }
         )
+        
+        // Letter-by-letter reveal animation
+        gsap.to(chars, {
+          opacity: 1,
+          y: 0,
+          rotationX: 0,
+          stagger: {
+            amount: 0.8,
+            from: "start"
+          },
+          duration: 0.6,
+          ease: 'back.out(1.2)',
+          delay: 0.6
+        })
+        
+        // Subtle continuous glow pulse
+        gsap.to(headingRef.current, {
+          filter: 'brightness(1.1)',
+          duration: 3,
+          ease: 'sine.inOut',
+          yoyo: true,
+          repeat: -1,
+          delay: 2.5
+        })
       }
 
+      // Enhanced subheading animation with fade and slide
       if (subheadingRef.current) {
         gsap.fromTo(
           subheadingRef.current,
           {
+            y: 60,
+            opacity: 0,
+            scale: 0.95
+          },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 1.2,
+            ease: 'power3.out',
+            delay: 1.0
+          }
+        )
+        
+        // Add subtle continuous animation
+        gsap.to(subheadingRef.current, {
+          y: -3,
+          duration: 2.5,
+          ease: 'sine.inOut',
+          yoyo: true,
+          repeat: -1,
+          delay: 2.5
+        })
+      }
+
+      // Enhanced buttons animation with stagger
+      if (buttonsRef.current) {
+        const buttons = buttonsRef.current.children
+        gsap.fromTo(
+          buttonsRef.current,
+          {
             y: 50,
-            opacity: 1
+            opacity: 0
           },
           {
             y: 0,
             opacity: 1,
             duration: 1,
             ease: 'power3.out',
-            delay: 0.8
+            delay: 1.4
           }
         )
-      }
-
-      if (buttonsRef.current) {
+        
         gsap.fromTo(
-          buttonsRef.current,
+          Array.from(buttons),
           {
             y: 30,
-            opacity: 1
+            opacity: 0,
+            scale: 0.9
           },
           {
             y: 0,
             opacity: 1,
+            scale: 1,
             duration: 0.8,
-            ease: 'power2.out',
-            delay: 1.2
+            ease: 'back.out(1.7)',
+            stagger: 0.15,
+            delay: 1.5
           }
         )
       }
@@ -83,7 +155,7 @@ const Hero = () => {
     }, heroRef)
 
     return () => ctx.revert()
-  }, [])
+  }, [siteContent])
 
   return (
     <section ref={heroRef} className="hero">
