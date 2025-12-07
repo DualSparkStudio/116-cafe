@@ -18,14 +18,8 @@ const Button = ({
       className={buttonClasses}
       onClick={onClick}
       type={type}
-      whileHover={{ 
-        scale: 1.02,
-        transition: { duration: 0.2 }
-      }}
-      whileTap={{ 
-        scale: 0.98,
-        transition: { duration: 0.1 }
-      }}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
       data-cursor="hover"
       {...props}
     >
@@ -39,14 +33,8 @@ const Button = ({
       <motion.a
         href={href}
         className={buttonClasses}
-        whileHover={{ 
-          scale: 1.02,
-          transition: { duration: 0.2 }
-        }}
-        whileTap={{ 
-          scale: 0.98,
-          transition: { duration: 0.1 }
-        }}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
         data-cursor="hover"
         {...props}
       >
