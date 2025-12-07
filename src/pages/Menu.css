@@ -94,7 +94,7 @@
 
 .menu-item-image {
   width: 100%;
-  height: 240px;
+  height: 180px;
   overflow: hidden;
   position: relative;
   background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
@@ -141,28 +141,28 @@
 }
 
 .menu-item-content {
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-xs);
   position: relative;
 }
 
 .menu-item-actions {
   margin-top: auto;
-  padding-top: var(--spacing-md);
+  padding-top: var(--spacing-sm);
 }
 
 .menu-add-to-cart-btn {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
   font-weight: 700;
   letter-spacing: 1px;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1.25rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   box-shadow: 0 4px 15px rgba(14, 165, 233, 0.25);
   position: relative;
   overflow: hidden;
@@ -203,11 +203,11 @@
 }
 
 .menu-item-header h3 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
   margin: 0;
   color: var(--color-text);
-  line-height: 1.3;
+  line-height: 1.2;
   letter-spacing: -0.5px;
   flex: 1;
 }
@@ -252,18 +252,18 @@
 
 .menu-item-description {
   color: var(--color-text-light);
-  margin-bottom: var(--spacing-sm);
-  line-height: 1.6;
-  font-size: 0.95rem;
-  min-height: 3em;
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.5;
+  font-size: 0.9rem;
+  min-height: auto;
 }
 
 .menu-item-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: var(--spacing-sm);
-  padding: var(--spacing-sm) 0;
+  margin-top: var(--spacing-xs);
+  padding: var(--spacing-xs) 0;
 }
 
 .menu-item-tags {
@@ -290,7 +290,7 @@
 }
 
 .menu-item-price {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--color-primary);
   font-family: var(--font-primary);
@@ -319,7 +319,7 @@
   }
 
   .menu-item-image {
-    height: 220px;
+    height: 160px;
   }
 
   .menu-item-header h3 {
