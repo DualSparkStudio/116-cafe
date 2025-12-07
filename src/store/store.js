@@ -73,7 +73,7 @@ export const useStore = create((set) => ({
           return stored ? JSON.parse(stored) : []
         } catch {
           return []
-        }
+      }
       })(),
       addToCart: (item, quantity = 1) => {
         set((state) => {
