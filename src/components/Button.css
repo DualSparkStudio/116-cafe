@@ -51,17 +51,24 @@
 
 /* Accent Variant */
 .btn-accent {
-  background: var(--color-primary);
-  color: var(--color-bg-light);
-  border: 2px solid var(--color-primary);
+  background: linear-gradient(135deg, var(--color-accent) 0%, #0284c7 100%);
+  color: #ffffff;
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.25);
+}
+
+.btn-accent:hover {
+  background: linear-gradient(135deg, #0284c7 0%, var(--color-accent) 100%);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.35);
+  transform: translateY(-2px);
 }
 
 .btn-accent .btn-bg {
-  background: var(--color-accent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
 }
 
 .btn-accent:hover .btn-text {
-  color: var(--color-bg-light);
+  color: #ffffff;
 }
 
 /* Ghost Variant */
