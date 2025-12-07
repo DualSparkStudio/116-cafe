@@ -33,7 +33,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  z-index: 0;
+  z-index: 1;
   filter: brightness(0.7) contrast(1.1) saturate(1.05);
   pointer-events: none;
 }
@@ -48,7 +48,7 @@
   background-image: 
     radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
     radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -65,7 +65,7 @@
     rgba(0, 0, 0, 0.25) 50%,
     rgba(0, 0, 0, 0.45) 100%
   );
-  z-index: 1;
+  z-index: 3;
   pointer-events: none;
 }
 
