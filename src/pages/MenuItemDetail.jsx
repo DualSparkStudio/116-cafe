@@ -258,13 +258,24 @@ const MenuItemDetail = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="detail-image-wrapper">
+            <motion.div
+              className="detail-image-wrapper"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
               <Card className="detail-image-card">
                 {item.image && (
-                  <img src={item.image} alt={item.name} className="detail-image" />
+                  <motion.img
+                    src={item.image}
+                    alt={item.name}
+                    className="detail-image"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  />
                 )}
               </Card>
-            </div>
+            </motion.div>
 
             <div className="detail-info">
               <div className="detail-header">
@@ -329,85 +340,112 @@ const MenuItemDetail = () => {
           {/* Extended Information Section */}
           <motion.div
             className="detail-extended-info"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
             <div className="info-grid">
-              <Card className="info-card">
-                <h3 className="info-card-title">
-                  <span className="info-icon">🍽️</span>
-                  Ingredients
-                </h3>
-                <ul className="info-list">
-                  {extendedInfo.ingredients.map((ingredient, index) => (
-                    <li key={index}>{ingredient}</li>
-                  ))}
-                </ul>
-              </Card>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <Card className="info-card">
+                  <h3 className="info-card-title">
+                    <span className="info-icon">🍽️</span>
+                    Ingredients
+                  </h3>
+                  <ul className="info-list">
+                    {extendedInfo.ingredients.map((ingredient, index) => (
+                      <li key={index}>{ingredient}</li>
+                    ))}
+                  </ul>
+                </Card>
+              </motion.div>
 
-              <Card className="info-card">
-                <h3 className="info-card-title">
-                  <span className="info-icon">👨‍🍳</span>
-                  Preparation
-                </h3>
-                <p className="info-text">{extendedInfo.preparation}</p>
-              </Card>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
+                <Card className="info-card">
+                  <h3 className="info-card-title">
+                    <span className="info-icon">👨‍🍳</span>
+                    Preparation
+                  </h3>
+                  <p className="info-text">{extendedInfo.preparation}</p>
+                </Card>
+              </motion.div>
 
-              <Card className="info-card">
-                <h3 className="info-card-title">
-                  <span className="info-icon">📊</span>
-                  Nutritional Information
-                </h3>
-                <div className="nutrition-grid">
-                  <div className="nutrition-item">
-                    <span className="nutrition-label">Calories</span>
-                    <span className="nutrition-value">{extendedInfo.nutritionalInfo.calories}</span>
-                  </div>
-                  {extendedInfo.nutritionalInfo.caffeine && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+                <Card className="info-card">
+                  <h3 className="info-card-title">
+                    <span className="info-icon">📊</span>
+                    Nutritional Information
+                  </h3>
+                  <div className="nutrition-grid">
                     <div className="nutrition-item">
-                      <span className="nutrition-label">Caffeine</span>
-                      <span className="nutrition-value">{extendedInfo.nutritionalInfo.caffeine}</span>
+                      <span className="nutrition-label">Calories</span>
+                      <span className="nutrition-value">{extendedInfo.nutritionalInfo.calories}</span>
                     </div>
-                  )}
-                  <div className="nutrition-item">
-                    <span className="nutrition-label">Fat</span>
-                    <span className="nutrition-value">{extendedInfo.nutritionalInfo.fat}</span>
-                  </div>
-                  <div className="nutrition-item">
-                    <span className="nutrition-label">Carbs</span>
-                    <span className="nutrition-value">{extendedInfo.nutritionalInfo.carbs}</span>
-                  </div>
-                  <div className="nutrition-item">
-                    <span className="nutrition-label">Protein</span>
-                    <span className="nutrition-value">{extendedInfo.nutritionalInfo.protein}</span>
-                  </div>
-                  {extendedInfo.nutritionalInfo.fiber && (
+                    {extendedInfo.nutritionalInfo.caffeine && (
+                      <div className="nutrition-item">
+                        <span className="nutrition-label">Caffeine</span>
+                        <span className="nutrition-value">{extendedInfo.nutritionalInfo.caffeine}</span>
+                      </div>
+                    )}
                     <div className="nutrition-item">
-                      <span className="nutrition-label">Fiber</span>
-                      <span className="nutrition-value">{extendedInfo.nutritionalInfo.fiber}</span>
+                      <span className="nutrition-label">Fat</span>
+                      <span className="nutrition-value">{extendedInfo.nutritionalInfo.fat}</span>
                     </div>
-                  )}
-                </div>
-              </Card>
+                    <div className="nutrition-item">
+                      <span className="nutrition-label">Carbs</span>
+                      <span className="nutrition-value">{extendedInfo.nutritionalInfo.carbs}</span>
+                    </div>
+                    <div className="nutrition-item">
+                      <span className="nutrition-label">Protein</span>
+                      <span className="nutrition-value">{extendedInfo.nutritionalInfo.protein}</span>
+                    </div>
+                    {extendedInfo.nutritionalInfo.fiber && (
+                      <div className="nutrition-item">
+                        <span className="nutrition-label">Fiber</span>
+                        <span className="nutrition-value">{extendedInfo.nutritionalInfo.fiber}</span>
+                      </div>
+                    )}
+                  </div>
+                </Card>
+              </motion.div>
 
-              <Card className="info-card">
-                <h3 className="info-card-title">
-                  <span className="info-icon">🌍</span>
-                  Origin & Details
-                </h3>
-                <div className="origin-info">
-                  <div className="origin-item">
-                    <strong>Origin:</strong> {extendedInfo.origin}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+              >
+                <Card className="info-card">
+                  <h3 className="info-card-title">
+                    <span className="info-icon">🌍</span>
+                    Origin & Details
+                  </h3>
+                  <div className="origin-info">
+                    <div className="origin-item">
+                      <strong>Origin</strong>
+                      {extendedInfo.origin}
+                    </div>
+                    <div className="origin-item">
+                      <strong>Serving Size</strong>
+                      {extendedInfo.servingSize}
+                    </div>
+                    <div className="origin-item">
+                      <strong>Flavor Profile</strong>
+                      {extendedInfo.flavorProfile}
+                    </div>
                   </div>
-                  <div className="origin-item">
-                    <strong>Serving Size:</strong> {extendedInfo.servingSize}
-                  </div>
-                  <div className="origin-item">
-                    <strong>Flavor Profile:</strong> {extendedInfo.flavorProfile}
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </motion.div>
             </div>
           </motion.div>
         </div>
